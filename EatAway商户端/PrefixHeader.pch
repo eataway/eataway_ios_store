@@ -1,0 +1,83 @@
+//
+//  PrefixHeader.pch
+//  EatAway商户端
+//
+//  Created by apple on 2017/7/12.
+//  Copyright © 2017年 allen. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+
+#import "ObjectForRequest.h"
+#import "ObjectForUser.h"
+#import "TotalFunctionView.h"
+#import "SMGlobalMethod.h"
+#import "HWHttpTool.h"
+#import "SVProgressHUD.h"
+#import "SeverHeader.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//#define HTTPHOST @"192.168.0.115"
+
+#define HTTPHOST @"http://wm.sawfree.com"
+//#define HTTPHOST @"http://108.61.96.39"
+//#define HTTPHOST @"http://192.168.0.111"
+//根据RGB生成颜色
+#define EWColor(r,g,b,a) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:(a)]
+
+#define MAINCOLOR [UIColor colorWithRed:25/255.0 green:138/255.0 blue:223/255.0 alpha:1]
+#define GRAYLINECOLOR [UIColor colorWithWhite:240/255.0 alpha:1]
+#define LANGUAGECHINESE [[NSUserDefaults standardUserDefaults] objectForKey:@"language"]
+#define ISCHINESE [[[NSUserDefaults standardUserDefaults] objectForKey:@"language"] isEqualToString:@"1"]
+
+#define WINDOWWIDTH  [UIScreen mainScreen].bounds.size.width
+#define WINDOWHEIGHT  [UIScreen mainScreen].bounds.size.height
+
+#define ZEString(Z,E) ISCHINESE?Z:E
+
+#define ISOPEN [[NSUserDefaults standardUserDefaults] objectForKey:@"isopen"]
+
+
+#define USERID [[NSUserDefaults standardUserDefaults] objectForKey:@"userid"]
+#define TOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+#define NICKNAME [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"]
+//#define PHONENUMBER [[NSUserDefaults standardUserDefaults] objectForKey:@"phonenumber"]
+#define SHOPADDRESS [[NSUserDefaults standardUserDefaults] objectForKey:@"shopaddress"]
+#define HEADPHOTO [[NSUserDefaults standardUserDefaults] objectForKey:@"headphoto"]
+#define SHOPPICTURE [[NSUserDefaults standardUserDefaults] objectForKey:@"shoppicture"]
+#define SHOPLOCATION [[NSUserDefaults standardUserDefaults] objectForKey:@"shoplocation"]
+#define SHOPPHONE [[NSUserDefaults standardUserDefaults] objectForKey:@"shopphonenumber"]
+#define SHOPDESCRIPTION [[NSUserDefaults standardUserDefaults] objectForKey:@"shopdescription"]
+
+#define BRAINTREETOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"braintreetoken"]
+
+
+#define MERCHANTSTATE [[NSUserDefaults standardUserDefaults] objectForKey:@"merchantstate"]
+
+#define GOTIME [[NSUserDefaults standardUserDefaults] objectForKey:@"gotime"]
+#define LKMONEY [[NSUserDefaults standardUserDefaults] objectForKey:@"lkmoney"]
+#define MAXMONEY [[NSUserDefaults standardUserDefaults] objectForKey:@"maxmoney1111"]
+
+
+#define FREEDISTANCE [[NSUserDefaults standardUserDefaults] objectForKey:@"freedistance"]
+#define FREEMONEY [[NSUserDefaults standardUserDefaults] objectForKey:@"freemoney"]
+#define MAXDISTANCE [[NSUserDefaults standardUserDefaults] objectForKey:@"maxdistance"]
+
+#define MINPASSPRICE [[NSUserDefaults standardUserDefaults] objectForKey:@"minpassprices"]
+
+#define PUSH [[NSUserDefaults standardUserDefaults] objectForKey:@"push"]
+
+
+#define ALERTNOTLOGINBLOCK [TotalFunctionView alertContent:ZEString(@"请先登录", @"Please login first") onViewController:blockSelf];
+#define ALERTNOTLOGIN [TotalFunctionView alertContent:ZEString(@"请先登录", @"Please login first") onViewController:self];
+#define ALERTCLEARLOGINBLOCK [ObjectForUser clearLogin];[TotalFunctionView alertContent:ZEString(@"登录信息过期，请重新登录", @"Login information is outdated, please login again") onViewController:blockSelf];
+
+#endif /* PrefixHeader_pch */
